@@ -278,18 +278,18 @@ class _ImageButtonState extends State<ImageButton> {
 
   void _pickFromCamera() async {
     final editor = ZefyrToolbar.of(context).editor;
-    final image =
+    final images =
         await editor.imageDelegate.pickImage(editor.imageDelegate.cameraSource);
-    if (image != null) {
+    for (var image in images) {
       editor.formatSelection(NotusAttribute.embed.image(image));
     }
   }
 
   void _pickFromGallery() async {
     final editor = ZefyrToolbar.of(context).editor;
-    final image = await editor.imageDelegate
+    final images = await editor.imageDelegate
         .pickImage(editor.imageDelegate.gallerySource);
-    if (image != null) {
+    for (var image in images) {
       editor.formatSelection(NotusAttribute.embed.image(image));
     }
   }

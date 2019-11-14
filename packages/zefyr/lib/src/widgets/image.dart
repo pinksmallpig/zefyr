@@ -36,7 +36,7 @@ abstract class ZefyrImageDelegate<S> {
   /// Depending on your application returned key may represent a path to
   /// an image file on user's device, an HTTP link, or an identifier generated
   /// by a file hosting service like AWS S3 or Google Drive.
-  Future<String> pickImage(S source);
+  Future<List<String>> pickImage(S source);
 }
 
 class ZefyrImage extends StatefulWidget {
@@ -217,14 +217,14 @@ class RenderEditableImage extends RenderBox
     assert(constraints.hasBoundedWidth);
     if (child != null) {
       // Make constraints use 16:9 aspect ratio.
-      final width = constraints.maxWidth - kHorizontalPadding * 2;
-      final childConstraints = constraints.copyWith(
-        minWidth: 0.0,
-        maxWidth: width,
-        minHeight: 0.0,
-        maxHeight: (width * 9 / 16).floorToDouble(),
-      );
-      child.layout(childConstraints, parentUsesSize: true);
+//      final width = constraints.maxWidth - kHorizontalPadding * 2;
+//      final childConstraints = constraints.copyWith(
+//        minWidth: 0.0,
+//        maxWidth: width,
+//        minHeight: 0.0,
+//        maxHeight: (width * 9 / 16).floorToDouble(),
+//      );
+      child.layout(constraints, parentUsesSize: true);
       _lastChildSize = child.size;
       size = Size(constraints.maxWidth, _lastChildSize.height + kPaddingBottom);
     } else {
