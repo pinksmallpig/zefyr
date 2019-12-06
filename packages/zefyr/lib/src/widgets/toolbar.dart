@@ -31,6 +31,10 @@ enum ZefyrToolbarAction {
   image,
   cameraImage,
   galleryImage,
+  galleryVideo,
+  galleryGif,
+  atSign,
+  numberSign,
   hideKeyboard,
   close,
   confirm,
@@ -250,16 +254,22 @@ class ZefyrToolbarState extends State<ZefyrToolbar>
 
   List<Widget> _buildButtons(BuildContext context) {
     final buttons = <Widget>[
-      buildButton(context, ZefyrToolbarAction.bold),
-      buildButton(context, ZefyrToolbarAction.italic),
-      LinkButton(),
-      HeadingButton(),
-      buildButton(context, ZefyrToolbarAction.bulletList),
-      buildButton(context, ZefyrToolbarAction.numberList),
-      buildButton(context, ZefyrToolbarAction.quote),
-      buildButton(context, ZefyrToolbarAction.code),
-      buildButton(context, ZefyrToolbarAction.horizontalRule),
-      if (editor.imageDelegate != null) ImageButton(),
+//      buildButton(context, ZefyrToolbarAction.bold),
+//      buildButton(context, ZefyrToolbarAction.italic),
+//      LinkButton(),
+//      HeadingButton(),
+//      buildButton(context, ZefyrToolbarAction.bulletList),
+//      buildButton(context, ZefyrToolbarAction.numberList),
+//      buildButton(context, ZefyrToolbarAction.quote),
+//      buildButton(context, ZefyrToolbarAction.code),
+//      buildButton(context, ZefyrToolbarAction.horizontalRule),
+//      if (editor.imageDelegate != null) ImageButton(),
+        buildButton(context, ZefyrToolbarAction.galleryImage),
+        buildButton(context, ZefyrToolbarAction.galleryVideo),
+        buildButton(context, ZefyrToolbarAction.galleryGif),
+        buildButton(context, ZefyrToolbarAction.atSign),
+        buildButton(context, ZefyrToolbarAction.numberSign),
+
     ];
     return buttons;
   }
